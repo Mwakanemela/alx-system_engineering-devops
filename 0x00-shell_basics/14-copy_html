@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -name "*.html" -type f -newer ../ -exec cp --update --parents {} ../ \;
+find . -name "*.html" -type f -newer ../ -exec sh -c 'cp --update --parents "$0" "${0%/*}/../"' {} \+
